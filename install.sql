@@ -1,11 +1,11 @@
-CREATE DATABASE spring_code_challenge CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE TABLE companies
+CREATE DATABASE spring_code_challenge CHARACTER SET utf8mb4 COLLATE UTF8MB4_UNICODE_CI;
+CREATE TABLE spring_code_challenge.companies
 (
     `id`   INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(128) NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE employees
+CREATE TABLE spring_code_challenge.employees
 (
     `id`         INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `company_id` INT          NOT NULL,
