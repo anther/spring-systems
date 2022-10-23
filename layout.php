@@ -21,6 +21,7 @@
 <ul>
 	<li><a href='index.php?page=add_company'>Add Company</a></li>
 	<li><a href='index.php?page=view_companies'>View Companies</a></li>
+	<li><a href='index.php?page=view_all_employees'>View Employees</a></li>
 </ul>
 <?php if (isset($errorMessage) && $errorMessage): ?>
 	<p class="error"><?= $errorMessage ?></p>

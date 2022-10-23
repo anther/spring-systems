@@ -11,6 +11,7 @@ spl_autoload_register(function ($className) {
 $availablePages = [
 	'add_company',
 	'view_companies',
+	'view_all_employees',
 	'view_company',
 	'welcome',
 ];
@@ -25,6 +26,7 @@ if (!isset($availablePages[$page])) {
 $database = Database::connect();
 if ($database) {
 	$companyService = new CompanyService($database);
+	$employeeService = new EmployeeService($database);
 } else {
 	$errorMessage = "Database has not been created, please run the script in install.sql";
 }

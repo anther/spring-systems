@@ -13,16 +13,29 @@ if (isset($_POST['employee_name'])) {
 
 ?>
 
-<h3>Company - <?= htmlspecialchars($company->name) ?></h3>
+<h2>Company <?= htmlspecialchars($company->name) ?></h2>
 
 <h4><?= htmlspecialchars($company->name) ?>'s Employees - </h4>
+
+
 <?php $employees = $company->getEmployees() ?>
 <?php if ($employees): ?>
-	<ul>
-		<?php foreach ($company->getEmployees() as $employee): ?>
-			<li><?= htmlspecialchars($employee->name) ?></li>
+	<table>
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+		</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($employees as $employee): ?>
+			<tr>
+				<td><?= $employee->id ?></td>
+				<td><?= htmlspecialchars($employee->name) ?></td>
+			</tr>
 		<?php endforeach; ?>
-	</ul>
+		</tbody>
+	</table>
 <?php else: ?>
 	<p>There are no employees for this company yet</p>
 <?php endif; ?>
